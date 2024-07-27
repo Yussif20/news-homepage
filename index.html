@@ -20,22 +20,35 @@
     <div class="container">
       <header class="header">
         <img src="./images/logo.svg" alt="logo picture" />
-        <div class="burger-menu">
-          <div class="burger-menu__bar"></div>
-          <div class="burger-menu__bar"></div>
-          <div class="burger-menu__bar"></div>
+        <div class=".overlay"></div>
+        <div class="header__links">
+          <div class="burger-menu">
+            <div class="burger-menu__bar"></div>
+            <div class="burger-menu__bar"></div>
+            <div class="burger-menu__bar"></div>
+          </div>
+          <ul class="header__nav">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#new">New</a></li>
+            <li><a href="#popular">Popular</a></li>
+            <li><a href="#trending">Trending</a></li>
+            <li><a href="#categories">Categories</a></li>
+          </ul>
         </div>
-        <ul class="header__nav">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#new">New</a></li>
-          <li><a href="#popular">Popular</a></li>
-          <li><a href="#trending">Trending</a></li>
-          <li><a href="#categories">Categories</a></li>
-        </ul>
       </header>
       <div class="sections-container">
         <section class="hero">
-          <img src="./images/image-web-3-desktop.jpg" alt="" />
+          <picture>
+            <source
+              srcset="./images/image-web-3-mobile.jpg"
+              media="(max-width:600px)"
+            />
+            <source
+              srcset="./images/image-web-3-desktop.jpg"
+              media="(max-width:1500px)"
+            />
+            <img src="./images/image-web-3-desktop.jpg" alt="web desktop" />
+          </picture>
           <div class="hero__info">
             <h1 class="hero__info-heading">The Bright Future of Web 3.0?</h1>
             <div class="hero__info-text">
@@ -106,5 +119,6 @@
         >Frontend Mentor</a
       >. Coded by <a href="#">Yousef Ayman</a>.
     </div>
+    <script src="./script.js"></script>
   </body>
 </html>
