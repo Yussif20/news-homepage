@@ -44,6 +44,22 @@ a {
 }
 
 /* .global styles */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-dark-grayish-blue);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-soft-red);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-soft-orange);
+}
+
 body {
   font-family: "Inter", sans-serif;
   font-size: 1.5rem;
@@ -69,9 +85,6 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 0;
-}
-.header .burger-menu {
-  display: none;
 }
 .header__nav {
   display: flex;
@@ -190,4 +203,72 @@ body {
 
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 850px) {
+  .container {
+    max-width: 90%;
+  }
+  html {
+    font-size: 8px;
+  }
+  .sections-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .hero__info {
+    text-align: center;
+    flex-direction: column;
+  }
+  .articles {
+    text-align: center;
+  }
+  .posts {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .post {
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .header__nav {
+    display: none;
+  }
+  .burger-menu {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 0.75rem;
+    align-self: center;
+  }
+  .burger-menu__bar {
+    background-color: var(--color-very-dark-blue);
+    width: 4.375rem;
+    height: 0.4rem;
+    transition: 0.3s;
+  }
+  .burger-menu.checked .burger-menu__bar:nth-child(1) {
+    transform: translateY(10px) rotate(40deg);
+  }
+  .burger-menu.checked .burger-menu__bar:nth-child(2) {
+    visibility: hidden;
+    opacity: 0;
+  }
+  .burger-menu.checked .burger-menu__bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-40deg);
+  }
+}
+.header:has(.burger-menu__checkbox:checked) .burger-menu__bar:nth-child(1) {
+  transform: translateY(10px) rotate(40deg);
+}
+
+.header:has(.burger-menu__checkbox:checked) .burger-menu__bar:nth-child(2) {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.header:has(.burger-menu__checkbox:checked) .burger-menu__bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-40deg);
 }/*# sourceMappingURL=styles.css.map */
